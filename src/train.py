@@ -8,7 +8,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.metrics import r2_score
 import joblib
 
-df = pd.read_csv('../data/job_salary_prediction_dataset.csv')
+df = pd.read_csv('data/job_salary_prediction_dataset.csv')
 df.head()
 
 x = df.drop('salary',axis=1)
