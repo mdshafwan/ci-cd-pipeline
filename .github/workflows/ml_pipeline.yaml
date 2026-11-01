@@ -1,0 +1,42 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Real_ml_pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1.Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 2.Checkout Code
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+
+    - name: 3.Install dependencies
+      run: pip install -r requirements.txt
+        
+
+
+    - name: 4.validate_data
+      run: python src/validate_data.py
+
+    - name: 5.train
+      run: python src/train.py
+
+    - name: Test with pytest
+      run: pytest tests
+
+    - name: 6.Evaluate_model
+      run: python src/evalute.py
