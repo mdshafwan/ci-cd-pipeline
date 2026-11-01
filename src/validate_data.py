@@ -25,5 +25,5 @@ def validate():
     print(f"Data quality Passed ! Total rows :{len(df)},Columns:{len(df.columns)}")
     exit(0)
 
-if name == "main":
+if __name__ == "main":
     validate()
