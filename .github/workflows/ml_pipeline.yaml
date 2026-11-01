@@ -39,4 +39,4 @@ jobs:
       run: pytest tests
 
     - name: 6.Evaluate_model
-      run: python src/evalute.py
+      run: python src/evaluate.py
