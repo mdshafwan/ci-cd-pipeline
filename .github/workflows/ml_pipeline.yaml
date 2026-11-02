@@ -9,34 +9,59 @@ on:
   pull_request:
     branches: [ "master" ]
 
+  workflow_dispatch:
+
 
 jobs:
-  build:
+  train_eval:
     runs-on: ubuntu-latest
 
     steps:
     - name: 1.Checkout Code
       uses: actions/checkout@v4
 
-    - name: 2.Checkout Code
+    - name: 2.setup env
       uses: actions/setup-python@v5
       with:
         python-version: "3.11"
 
-
     - name: 3.Install dependencies
       run: pip install -r requirements.txt
         
-
-
     - name: 4.validate_data
       run: python src/validate_data.py
 
     - name: 5.train
       run: python src/train.py
 
-    - name: Test with pytest
+    - name: 6.Test with pytest
       run: pytest tests
 
-    - name: 6.Evaluate_model
+    - name: 7.Evaluate_model
       run: python src/evaluate.py
+
+    - name: 8.saving Model
+      uses: actions/upload-artifact@v4
+      with:
+        name: trained_model
+        path: model.pkl
+        retention-days: 7 
+
+
+  deploy-to-production:
+    needs: train_eval
+    if : github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1.Checkout
+        uses: actions/checkout@v4
+
+      - name: 2.setup_python env
+        uses: actions/setup-python@v4
+
+      - name: 3. download-artifaqcts
+        uses: actions/download-artifact@v4
+
+      - name: 4.execute the deployment
+        run: python src/deploy.py
