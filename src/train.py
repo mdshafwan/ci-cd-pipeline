@@ -13,7 +13,7 @@ from sklearn.compose import ColumnTransformer
 import pandas as pd
 from mlflow.models import infer_signature
 import pytest
-
+os.environ["MLFLOW_ALLOW_FILE_STORE"] = "true"
 def train():
     data_path =  "data/customer_churn_dataset-testing-master.csv"
     
