@@ -1,7 +1,7 @@
 import os
 
 def test_dataset():
-    assert os.path.exists("data/job_salary_prediction_dataset.csv")
+    assert os.path.exists("data/customer_churn_dataset-testing-master.csv")
 
 def test_model():
     assert os.path.exists("model.pkl")

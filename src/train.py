@@ -1,4 +1,5 @@
 import os
+import joblib
 import mlflow.sklearn
 import optuna
 import mlflow
@@ -83,7 +84,6 @@ def train():
         mlflow.log_metric("recall",best_recall)
         signature = infer_signature(x_train,best_model.predict(x_train))
         mlflow.sklearn.log_model(best_model,name='model',serialization_format='pickle',signature=signature)
-
 
 
 if __name__ == "__main__":
