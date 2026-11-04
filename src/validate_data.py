@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-data_path = 'data/job_salary_prediction_dataset.csv'
+data_path = 'data/customer_churn_dataset-testing-master.csv'
 
 def validate():
     print('step1: Checking the data')
@@ -10,7 +10,7 @@ def validate():
         print('Error: Dataset was not found')
         exit(1)
 
-    df = pd.read_csv('data/job_salary_prediction_dataset.csv')
+    df = pd.read_csv('data/customer_churn_dataset-testing-master.csv')
 
     if df.empty:
         print("The dataset was empty")

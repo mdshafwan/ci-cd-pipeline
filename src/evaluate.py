@@ -1,17 +1,17 @@
 import joblib
-from sklearn.metrics import r2_score
+from sklearn.metrics import accuracy_score
 
 model = joblib.load("model.pkl")
 x_test,y_test = joblib.load('set.pkl')
 
 prediction = model.predict(x_test)
-acc = r2_score(prediction,y_test)
+acc = accuracy_score(prediction,y_test)
 
 print('metrics',acc)
 
-if acc <= 0.90:
+if acc >= 0.90:
     print("model was better at performing")
-    exit(1)
+    exit(0)
 else:
     print("model was worst condition")
-    exit(0)
+    exit(1)
