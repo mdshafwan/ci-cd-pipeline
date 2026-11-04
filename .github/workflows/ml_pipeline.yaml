@@ -59,6 +59,9 @@ jobs:
 
       - name: 3. download-artifaqcts
         uses: actions/download-artifact@v4
+        with:
+          name: trained_model
+          path: .
 
       - name: 4.execute the deployment
         run: python src/deploy.py
