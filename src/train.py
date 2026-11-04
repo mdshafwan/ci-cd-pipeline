@@ -15,11 +15,11 @@ from mlflow.models import infer_signature
 import pytest
 
 def train():
-    data_path =  "../data/customer_churn_dataset-testing-master.csv"
+    data_path =  "data/customer_churn_dataset-testing-master.csv"
     
     if not os.path.exists(data_path):
         print("the empty dataset")
-        exit(0)
+        exit(1)
 
     df = pd.read_csv(data_path)
 
@@ -31,7 +31,7 @@ def train():
     le = LabelEncoder()
     y = le.fit_transform(df["Churn"])
 
-    mlflow.set_tracking_uri('http://127.0.0.1:5000')
+    mlflow.set_tracking_uri('file:./mlruns')
     mlflow.set_experiment('churn_dataset')
 
 
@@ -84,7 +84,8 @@ def train():
         mlflow.log_metric("recall",best_recall)
         signature = infer_signature(x_train,best_model.predict(x_train))
         mlflow.sklearn.log_model(best_model,name='model',serialization_format='pickle',signature=signature)
-
+        joblib.dump(best_model, "model.pkl")
+        joblib.dump((x_test, y_test), "set.pkl")
 
 if __name__ == "__main__":
     train()
