@@ -11,6 +11,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 import pandas as pd
 from mlflow.models import infer_signature
+import pytest
 
 def train():
     data_path =  "../data/customer_churn_dataset-testing-master.csv"
