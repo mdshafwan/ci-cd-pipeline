@@ -14,8 +14,8 @@ def deploy():
 
     timestamp = datetime.datetime.now().strftime(r'%Y%m%d_%H%M%S')
     version_model = f"model_{timestamp}.pkl"
-    target_path = os.path.join("targeted_path",version_model)
-    latest_path = os.path.join("targeted_path","latest_model.pkl")
+    target_path = os.path.join(targeted_path,version_model)
+    latest_path = os.path.join(targeted_path,"latest_model.pkl")
     shutil.copy(source,target_path)
     shutil.copy(source,latest_path)
 
