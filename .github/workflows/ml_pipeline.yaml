@@ -5,49 +5,46 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
   workflow_dispatch:
-
 
 jobs:
   train_eval:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 1.Checkout Code
+    - name: 1. Checkout Code
       uses: actions/checkout@v4
 
-    - name: 2.setup env
+    - name: 2. Setup env
       uses: actions/setup-python@v4
       with:
         python-version: "3.11"
 
-    - name: 3.Install dependencies
+    - name: 3. Install dependencies
       run: pip install -r requirements.txt
         
-    - name: 4.validate_data
+    - name: 4. Validate data
       run: python src/validate_data.py
 
-    - name: 5.train
+    - name: 5. Train model
       run: python src/train.py
 
-    - name: 6.Test with pytest
+    - name: 6. Test with pytest
       run: pytest tests
 
-    - name: 7.Evaluate_model
+    - name: 7. Evaluate model
       run: python src/evaluate.py
 
-    - name: 8.saving Model
+    - name: 8. Save Model Artifact
       uses: actions/upload-artifact@v4
       with:
         name: trained_model
         path: model.pkl
         retention-days: 7 
 
-
   deploy-to-production:
     needs: train_eval
-    if: github.ref == 'refs/heads/master'   # or main
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
 
     steps:
@@ -70,7 +67,7 @@ jobs:
       - name: 5. Deploy with Automated Rollback
         run: python src/deploy_with_rollback.py
 
-      - name: 6. Upload production snapshot (optional)
+      - name: 6. Upload production snapshot
         if: success()
         uses: actions/upload-artifact@v4
         with:
