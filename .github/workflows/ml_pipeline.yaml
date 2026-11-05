@@ -6,7 +6,8 @@ on:
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
-
+  schedule:
+    - cron: '0 3 * * 1'
 jobs:
   train_eval:
     runs-on: ubuntu-latest
