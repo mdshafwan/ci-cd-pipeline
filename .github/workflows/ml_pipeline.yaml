@@ -47,21 +47,33 @@ jobs:
 
   deploy-to-production:
     needs: train_eval
-    if : github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'   # or main
     runs-on: ubuntu-latest
 
     steps:
-      - name: 1.Checkout
+      - name: 1. Checkout
         uses: actions/checkout@v4
 
-      - name: 2.setup_python env
+      - name: 2. Setup Python
         uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
 
-      - name: 3. download-artifaqcts
+      - name: 3. Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: 4. Download trained model artifact
         uses: actions/download-artifact@v4
         with:
-          name: trained_model
-          path: .
+          name: trained_model          
 
-      - name: 4.execute the deployment
-        run: python src/deploy.py
+      - name: 5. Deploy with Automated Rollback
+        run: python src/deploy_with_rollback.py
+
+      - name: 6. Upload production snapshot (optional)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-models
+          path: production_models/
+          retention-days: 14
