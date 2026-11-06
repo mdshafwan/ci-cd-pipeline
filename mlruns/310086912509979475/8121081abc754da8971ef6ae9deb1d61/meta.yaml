@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/310086912509979475/8121081abc754da8971ef6ae9deb1d61/artifacts
+end_time: 1793939797101
+entry_point_name: ''
+experiment_id: '310086912509979475'
+lifecycle_stage: active
+run_id: 8121081abc754da8971ef6ae9deb1d61
+run_name: stylish-wren-612
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793939796182
+status: 3
+tags: []
+user_id: madonna

@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/310086912509979475/dc418b46fe384e39850ed726c2e1e228/artifacts
+end_time: 1793939798047
+entry_point_name: ''
+experiment_id: '310086912509979475'
+lifecycle_stage: active
+run_id: dc418b46fe384e39850ed726c2e1e228
+run_name: delightful-ape-849
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793939797141
+status: 3
+tags: []
+user_id: madonna

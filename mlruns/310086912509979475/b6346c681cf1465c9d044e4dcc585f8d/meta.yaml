@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/310086912509979475/b6346c681cf1465c9d044e4dcc585f8d/artifacts
+end_time: 1793939801651
+entry_point_name: ''
+experiment_id: '310086912509979475'
+lifecycle_stage: active
+run_id: b6346c681cf1465c9d044e4dcc585f8d
+run_name: smiling-mole-502
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793939800668
+status: 3
+tags: []
+user_id: madonna

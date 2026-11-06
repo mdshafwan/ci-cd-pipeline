@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/310086912509979475/a6000296ea424a4fb2c3d68bf007177b/artifacts
+end_time: 1793939806117
+entry_point_name: ''
+experiment_id: '310086912509979475'
+lifecycle_stage: active
+run_id: a6000296ea424a4fb2c3d68bf007177b
+run_name: rumbling-sloth-201
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793939804771
+status: 3
+tags: []
+user_id: madonna

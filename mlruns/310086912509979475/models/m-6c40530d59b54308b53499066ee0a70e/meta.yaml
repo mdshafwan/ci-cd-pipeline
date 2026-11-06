@@ -1,0 +1,10 @@
+artifact_location: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/310086912509979475/models/m-6c40530d59b54308b53499066ee0a70e/artifacts
+creation_timestamp: 1793939807130
+experiment_id: '310086912509979475'
+last_updated_timestamp: 1793939847081
+model_id: m-6c40530d59b54308b53499066ee0a70e
+model_type: null
+name: model
+source_run_id: f86af3a439464557ba8e7117206822a9
+status: 2
+status_message: null

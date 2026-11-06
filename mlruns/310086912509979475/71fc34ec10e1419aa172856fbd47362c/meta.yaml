@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/310086912509979475/71fc34ec10e1419aa172856fbd47362c/artifacts
+end_time: 1793939799545
+entry_point_name: ''
+experiment_id: '310086912509979475'
+lifecycle_stage: active
+run_id: 71fc34ec10e1419aa172856fbd47362c
+run_name: dapper-horse-829
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793939798088
+status: 3
+tags: []
+user_id: madonna

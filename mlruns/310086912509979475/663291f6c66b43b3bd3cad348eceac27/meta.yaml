@@ -1,0 +1,14 @@
+artifact_uri: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/310086912509979475/663291f6c66b43b3bd3cad348eceac27/artifacts
+end_time: 1793939804729
+entry_point_name: ''
+experiment_id: '310086912509979475'
+lifecycle_stage: active
+run_id: 663291f6c66b43b3bd3cad348eceac27
+run_name: debonair-wasp-661
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793939803645
+status: 3
+tags: []
+user_id: madonna

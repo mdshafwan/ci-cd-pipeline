@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 5s   # Scrape metrics every 5 seconds
+
+scrape_configs:
+  - job_name: 'churn_ml_api'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['host.docker.internal:8000']  # Points to FastAPI app running on port 8000
