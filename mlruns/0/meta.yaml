@@ -1,9 +1,0 @@
-artifact_location: file:///mnt/d/brototype/SAFAN/code/fourtyseven/ci_cl_demo/mlruns/0
-creation_time: 1793939786686
-effective_trace_archival_retention: null
-experiment_id: '0'
-last_update_time: 1793939786686
-lifecycle_stage: active
-name: Default
-trace_location: null
-workspace: default
